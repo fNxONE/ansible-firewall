@@ -4,6 +4,19 @@ galaxy_info:
   license: license (GPLv2, CC-BY, etc)
   min_ansible_version: 1.2
   github_branch: master
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  - name: Debian
+    versions:
+    - jessie
+    - stretch
+    - wheezy
+  - name: EL
+    versions:
+    - 6
+    - 7
   galaxy_tags:
     - firewall
     - shorewall
