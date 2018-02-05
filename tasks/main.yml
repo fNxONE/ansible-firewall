@@ -1,8 +1,8 @@
 ---
-- include: shorewall.yml
+- import_tasks: shorewall.yml
   when: shorewall == True
   tags: shorewall
 
-- include: shorewall6.yml
+- import_tasks: shorewall6.yml
   when: shorewall6 == True
   tags: [ 'shorewall', 'shorewall6' ] 

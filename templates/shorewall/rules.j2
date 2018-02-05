@@ -9,9 +9,14 @@
 ######################################################################################################################################################################################################
 #ACTION  SOURCE  DEST  PROTO  DEST  SOURCE   ORIGINAL  RATE   USER/  MARK  CONNLIMIT  TIME  HEADERS  SWITCH  HELPER
 #                             PORT  PORT(S)  DEST      LIMIT  GROUP
-
+#?SECTION ALL
+#?SECTION ESTABLISHED
+#?SECTION RELATED
+#?SECTION INVALID
+#?SECTION UNTRACKED
 {% for section in shorewall_rules %}
 ?SECTION {{ section.section }}
+
 {% for rule in section.rules %}
 {{ rule.action | default('-') }} {{ rule.source | default('-') }} {{ rule.dest | default('-') }} {{ rule.proto | default('-') }} {{ rule.dest_port | default('-') }} {{ rule.source_port | default('-') }} {{ rule.original_dest | default('-') }} {{ rule.rate_limit | default('-') }} {{ rule.user_group | default('-') }} {{ rule.mark | default('-') }} {{ rule.connlimit | default('-') }} {{ rule.time | default('-') }} {{ rule.headers | default('-') }} {{ rule.switch | default('-') }} {{ rule.helper | default('-') }}
 {% endfor %}
